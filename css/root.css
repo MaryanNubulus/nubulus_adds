@@ -1,0 +1,20 @@
+:root {
+    --blau-p: #2b4246;
+  	--blau-p-t: #2b424612;
+  	--blau-p-t-2: #2b424659;
+    --blau-s: #7fb9c6;
+  	--gris-1: rgba(87, 87, 86,1);
+  	--groc:rgba(244, 152, 0, 1);
+  	--negrecorp:#021012;
+  	--gris:#F0F0F0;
+  	--blaufons:rgba(230, 241, 243,1);
+  	--blanc: #FFF;
+  	--negre: #000;
+  	--blanc-1: #dfdfdf;
+  	--white: #fff;
+  	--gris-fondo: #fafafa;
+  	--padding-y: 5rem;  	
+  	--secondary-filter: brightness(0) saturate(100%) invert(73%) sepia(16%) saturate(687%) hue-rotate(144deg) brightness(93%) contrast(89%);
+  	--gradient: radial-gradient(circle, rgba(43,66,70,1) 10%, rgba(127,185,198,1) 50%, rgba(43,66,70,1) 90%);  	
+	--gradient-linear: linear-gradient(to left top, #7fb9c6, #6999a4, #537b83, #3e5e64, #2b4246);
+}
