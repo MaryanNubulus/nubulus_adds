@@ -533,15 +533,6 @@
   line-height: 1.6;
 }
 
-.adds-landing .ia-list li:before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--blau-s);
-  font-size: 2rem;
-  font-weight: 700;
-}
-
 .adds-landing .ia-cta-box {
   background: var(--gradient-primary);
   color: var(--blanc);
@@ -1019,25 +1010,19 @@
   font-weight: bold;
 }
 
-.adds-landing .styled-list ul {
+.adds-landing .styled-list ul,
+.adds-landing .styled-list {
   list-style: none;
   padding: 0;
 }
 
-.adds-landing .styled-list ul li {
+.adds-landing .styled-list ul li,
+.adds-landing .styled-list li {
   padding: 1.5rem 0 1.5rem 4rem;
   position: relative;
   border-bottom: 1px solid #e0e0e0;
 }
 
-.adds-landing .styled-list ul li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--blau-s);
-  font-size: 2.4rem;
-  font-weight: bold;
-}
 
 /* ==========================================================================
    COMPONENT: FORMULARI
