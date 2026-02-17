@@ -1,10 +1,20 @@
-.adds-landing section {
-  padding: var(--padding-y) 0;
+/* ==========================================================================
+   ADDS LANDING - Estil base per totes les landings
+   Sistema de components modular i reutilitzable
+   ========================================================================== */
+
+/* Variables generals */
+.adds-landing {
+  --gradient-primary: linear-gradient(135deg, var(--blau-p) 0%, var(--blau-s) 100%);
+  --gradient-secondary: linear-gradient(135deg, #36a1ba 0%, var(--blau-s) 100%);
+  --shadow-sm: 0 2px 8px rgba(43, 66, 70, 0.08);
+  --shadow-md: 0 4px 16px rgba(43, 66, 70, 0.12);
+  --shadow-lg: 0 8px 32px rgba(43, 66, 70, 0.16);
 }
 
-.adds-landing section .contact-btn.disabled {
-  pointer-events: none;
-  opacity: 0.6;
+/* Reset de seccions */
+.adds-landing section {
+  padding: var(--padding-y) 0;
 }
 
 .adds-landing section.gris {
@@ -37,6 +47,104 @@
   margin: 0 auto;
 }
 
+/* ==========================================================================
+   COMPONENT: HERO - Versió Gradient amb Overlay
+   ========================================================================== */
+
+.adds-landing .hero-immobiliari,
+.adds-landing .hero-gradient {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--blau-p) 0%, #36a1ba 50%, var(--blau-s) 100%);
+  overflow: hidden;
+  padding: 10rem 0 8rem;
+}
+
+.adds-landing .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+}
+
+.adds-landing .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.adds-landing .hero-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--blanc);
+  padding: 0.8rem 2rem;
+  border-radius: 3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.adds-landing .hero-title {
+  font-size: clamp(3.2rem, 5vi, 5.6rem);
+  color: var(--blanc);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.adds-landing .hero-subtitle {
+  font-size: clamp(2rem, 3vi, 2.8rem);
+  color: var(--blanc);
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+}
+
+.adds-landing .hero-text {
+  font-size: clamp(1.8rem, 2.2vi, 2.2rem);
+  color: var(--blanc);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.adds-landing .hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.adds-landing .hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--blanc);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.adds-landing .feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  backdrop-filter: blur(10px);
+}
+
+/* HERO Simple (estil anterior compatible) */
 .adds-landing .hero {
   text-align: center;
   padding: 8rem 0;
@@ -56,6 +164,667 @@
   max-width: 800px;
   margin: 0 auto 3rem;
 }
+
+/* ==========================================================================
+   COMPONENT: SECTION HEADER
+   ========================================================================== */
+
+.adds-landing .section-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.adds-landing .section-header.left {
+  text-align: left;
+}
+
+.adds-landing .section-tag {
+  display: inline-block;
+  color: var(--blau-s);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.adds-landing .section-header h2 {
+  font-size: clamp(3rem, 4vi, 4.2rem);
+  color: var(--blau-p);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.adds-landing .section-intro {
+  font-size: clamp(1.8rem, 2.2vi, 2.2rem);
+  color: var(--gris-1);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.adds-landing .section-header.left .section-intro {
+  margin: 0;
+}
+
+/* ==========================================================================
+   COMPONENT: RESULTATS CARDS
+   ========================================================================== */
+
+.adds-landing .resultats-section {
+  padding: 8rem 0;
+  background: var(--blanc);
+}
+
+.adds-landing .resultats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.adds-landing .resultat-card {
+  background: var(--gris-fondo);
+  border-radius: 2rem;
+  padding: 4rem 3rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.adds-landing .resultat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blau-s);
+}
+
+.adds-landing .resultat-icon {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+.adds-landing .resultat-number {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--blau-s);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.adds-landing .resultat-text {
+  font-size: 1.8rem;
+  color: var(--blau-p);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   COMPONENT: SERVEIS - Layout Asimètric
+   ========================================================================== */
+
+.adds-landing .serveis-section {
+  padding: 8rem 0;
+  background: var(--gris-fondo);
+}
+
+.adds-landing .serveis-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.adds-landing .servei-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  background: var(--blanc);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.adds-landing .servei-left .servei-content {
+  padding: 5rem 5rem 5rem 8rem;
+}
+
+.adds-landing .servei-left .servei-image {
+  padding: 0;
+}
+
+.adds-landing .servei-right .servei-content {
+  padding: 5rem 8rem 5rem 5rem;
+}
+
+.adds-landing .servei-right .servei-image {
+  padding: 0;
+}
+
+.adds-landing .servei-number {
+  display: inline-block;
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--blau-s);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.adds-landing .servei-content h3 {
+  font-size: clamp(2.4rem, 3vi, 3.2rem);
+  color: var(--blau-p);
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.adds-landing .servei-content p {
+  font-size: 1.9rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.adds-landing .servei-list {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0;
+}
+
+.adds-landing .servei-list li {
+  font-size: 1.8rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.adds-landing .servei-list li:last-child {
+  border-bottom: none;
+}
+
+.adds-landing .servei-highlight {
+  background: linear-gradient(135deg, var(--blau-p) 0%, var(--blau-s) 100%);
+  color: var(--blanc);
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
+
+.adds-landing .servei-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 450px;
+}
+
+/* Plataformes grid */
+.adds-landing .plataformes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.adds-landing .plataforma-item {
+  background: var(--gris-fondo);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.adds-landing .plataforma-icon {
+  width: 5rem;
+  height: 5rem;
+  background: var(--gradient-primary);
+  color: var(--blanc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
+
+.adds-landing .plataforma-item strong {
+  display: block;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  color: var(--blau-p);
+}
+
+.adds-landing .plataforma-item span {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--gris-1);
+}
+
+/* Segmentació box */
+.adds-landing .segmentacio-box {
+  background: var(--gris-fondo);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+
+.adds-landing .segmentacio-box h4 {
+  font-size: 1.8rem;
+  color: var(--blau-p);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.adds-landing .segmentacio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.adds-landing .segmentacio-tags .tag {
+  background: var(--blanc);
+  color: var(--blau-p);
+  padding: 0.8rem 1.8rem;
+  border-radius: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid var(--blau-s);
+}
+
+/* ==========================================================================
+   COMPONENT: POTENCIEM CARDS (2 columnes)
+   ========================================================================== */
+
+.adds-landing .potenciem-section {
+  padding: 8rem 0;
+  background: var(--blanc);
+}
+
+.adds-landing .potenciem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 5rem;
+}
+
+.adds-landing .potenciem-card {
+  background: var(--gris-fondo);
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.adds-landing .potenciem-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.adds-landing .potenciem-visual {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+.adds-landing .potenciem-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adds-landing .visual-badge {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: var(--gradient-primary);
+  color: var(--blanc);
+  padding: 1rem 2.5rem;
+  border-radius: 3rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.adds-landing .potenciem-info {
+  padding: 3.5rem;
+}
+
+.adds-landing .potenciem-info h3 {
+  font-size: 2.6rem;
+  color: var(--blau-p);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.adds-landing .potenciem-info p {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.adds-landing .benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.adds-landing .benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--blanc);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--blau-p);
+}
+
+.adds-landing .benefit-icon {
+  font-size: 2.4rem;
+}
+
+.adds-landing .ia-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.adds-landing .ia-list li {
+  padding: 1rem 0 1rem 3rem;
+  position: relative;
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+
+.adds-landing .ia-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--blau-s);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.adds-landing .ia-cta-box {
+  background: var(--gradient-primary);
+  color: var(--blanc);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  margin-top: 2.5rem;
+}
+
+.adds-landing .ia-cta-box p {
+  color: var(--blanc);
+  margin-bottom: 1rem;
+}
+
+.adds-landing .ia-cta-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   COMPONENT: TIMELINE
+   ========================================================================== */
+
+.adds-landing .enfocament-section,
+.adds-landing .timeline-section {
+  padding: 8rem 0;
+  background: var(--gris-fondo);
+}
+
+.adds-landing .timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 5rem auto 0;
+  padding-left: 5rem;
+}
+
+.adds-landing .timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.8rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gradient-primary);
+}
+
+.adds-landing .timeline-item {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.adds-landing .timeline-marker {
+  position: absolute;
+  left: -5rem;
+  width: 4rem;
+  height: 4rem;
+  background: var(--gradient-primary);
+  color: var(--blanc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 8px var(--gris-fondo);
+}
+
+.adds-landing .timeline-content {
+  background: var(--blanc);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.adds-landing .timeline-content:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(8px);
+}
+
+.adds-landing .timeline-content h4 {
+  font-size: 2.2rem;
+  color: var(--blau-p);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.adds-landing .timeline-content p {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   COMPONENT: FAQ ACCORDION
+   ========================================================================== */
+
+.adds-landing .faq-section {
+  padding: 8rem 0;
+  background: var(--blanc);
+}
+
+.adds-landing .faq-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.adds-landing .faq-item {
+  background: var(--gris-fondo);
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.adds-landing .faq-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.adds-landing .faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 3rem;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blau-p);
+  transition: all 0.3s ease;
+}
+
+.adds-landing .faq-question:hover {
+  color: var(--blau-s);
+}
+
+.adds-landing .faq-icon {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--blau-s);
+  transition: transform 0.3s ease;
+}
+
+.adds-landing .faq-answer {
+  padding: 0 3rem 2.5rem;
+  background: var(--blanc);
+}
+
+.adds-landing .faq-answer p {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================================================
+   COMPONENT: CTA FINAL
+   ========================================================================== */
+
+.adds-landing .cta-final-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+}
+
+.adds-landing .cta-final-box {
+  text-align: center;
+  color: var(--blanc);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.adds-landing .cta-final-box h2 {
+  font-size: clamp(3rem, 4vi, 4.2rem);
+  color: var(--blanc);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.adds-landing .cta-final-box p {
+  font-size: clamp(1.8rem, 2.2vi, 2.2rem);
+  color: var(--blanc);
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.adds-landing .cta-promise {
+  font-size: 2.2rem;
+  margin: 3rem 0;
+  opacity: 1;
+}
+
+.adds-landing .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+/* ==========================================================================
+   COMPONENT: BOTONS CTA
+   ========================================================================== */
+
+.adds-landing .cta-primary {
+  display: inline-block;
+  background: var(--blanc);
+  color: var(--blau-p);
+  padding: 1.8rem 4.5rem;
+  border-radius: 5rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.adds-landing .cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  color: var(--blau-p);
+  text-decoration: none;
+}
+
+.adds-landing .cta-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--blanc);
+  padding: 1.8rem 4.5rem;
+  border-radius: 5rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 3px solid var(--blanc);
+  transition: all 0.3s ease;
+}
+
+.adds-landing .cta-secondary:hover {
+  background: var(--blanc);
+  color: var(--blau-p);
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+/* Botó contact (estil anterior compatible) */
+.adds-landing .contact-btn {
+  display: inline-block;
+  margin: 3rem auto;
+  background-color: var(--blau-s);
+  color: #fff;
+  padding: 1.5rem 4rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: center;
+  transition: all 0.7s;
+  border: 2px solid var(--blau-s);
+}
+
+.adds-landing .contact-btn:hover {
+  background-color: var(--blau-p);
+  border-color: var(--blau-p);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(43, 66, 70, 0.3);
+}
+
+.adds-landing .contact-btn.secondary {
+  background-color: transparent;
+  color: var(--blau-s);
+  border: 2px solid var(--blau-s);
+}
+
+.adds-landing .contact-btn.secondary:hover {
+  background-color: var(--blau-s);
+  color: #fff;
+}
+
+.adds-landing .contact-btn.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   COMPONENT: TEXT SECTIONS (mantingut per compatibilitat)
+   ========================================================================== */
 
 .adds-landing .text {
   text-align: center;
@@ -85,6 +854,10 @@
 .adds-landing .text-img .grid.reverse>div {
   direction: ltr;
 }
+
+/* ==========================================================================
+   COMPONENT: GRID 3/4 (mantingut per compatibilitat)
+   ========================================================================== */
 
 .adds-landing .grid-3 {
   background: var(--gradient);
@@ -209,6 +982,10 @@
   align-items: center;
 }
 
+/* ==========================================================================
+   COMPONENT: LLISTES (mantingut per compatibilitat)
+   ========================================================================== */
+
 .adds-landing .numbered-list ol {
   counter-reset: item;
   list-style: none;
@@ -262,55 +1039,76 @@
   font-weight: bold;
 }
 
-.adds-landing .contact-btn {
-  display: inline-block;
-  margin: 3rem auto;
-  background-color: var(--blau-s);
-  color: #fff;
-  padding: 1.5rem 4rem;
-  border-radius: 3rem;
-  text-decoration: none;
-  font-weight: bold;
+/* ==========================================================================
+   COMPONENT: FORMULARI
+   ========================================================================== */
+
+.adds-landing .form-service,
+.adds-landing .form-service-immobiliari {
+  padding: 8rem 0;
+  background: var(--gris-fondo);
+}
+
+.adds-landing .form-wrapper {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.adds-landing .form-info h2 {
+  font-size: clamp(2.8rem, 4vi, 3.6rem);
+  color: var(--blau-p);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.adds-landing .form-info p {
+  font-size: 1.9rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.adds-landing .form-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.adds-landing .form-benefit {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   font-size: 1.8rem;
-  text-align: center;
-  transition: all 0.7s;
-  border: 2px solid var(--blau-s);
+  font-weight: 600;
+  color: var(--blau-p);
 }
 
-.adds-landing .contact-btn:hover {
-  background-color: var(--blau-p);
-  border-color: var(--blau-p);
-  color: #fff;
-  text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(43, 66, 70, 0.3);
+.adds-landing .benefit-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--blau-s);
+  color: var(--blanc);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
-.adds-landing .contact-btn.secondary {
-  background-color: transparent;
-  color: var(--blau-s);
-  border: 2px solid var(--blau-s);
-}
-
-.adds-landing .contact-btn.secondary:hover {
-  background-color: var(--blau-s);
-  color: #fff;
-}
-
-.adds-landing .form-service {
-  padding: 6rem 0;
-}
-
-.adds-landing .custom-adds-box {
+.adds-landing .custom-adds-box,
+.adds-landing .form-box {
   max-width: 700px;
   margin: 0 auto;
-  padding: 4rem 3rem;
+  padding: 4.5rem;
   background-color: var(--blanc);
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  box-shadow: var(--shadow-lg);
 }
 
-.adds-landing .custom-adds-box h2 {
+.adds-landing .custom-adds-box h2,
+.adds-landing .form-box h2 {
   text-align: center;
   margin-bottom: 2rem;
   color: var(--blau-p);
@@ -326,30 +1124,37 @@
   margin-bottom: 2.5rem;
 }
 
+.adds-landing .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
 .adds-landing .form-group label {
   display: block;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--blau-p);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .adds-landing .form-control {
   width: 100%;
-  padding: 1.2rem 1.5rem;
-  font-size: 1.6rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.7rem;
   font-family: 'Raleway', sans-serif;
   color: var(--blau-p);
-  background-color: var(--blanc);
-  border: 2px solid #ddd;
-  border-radius: 0.5rem;
-  transition: all 0.3s;
+  background-color: var(--gris-fondo);
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
 }
 
 .adds-landing .form-control:focus {
   outline: none;
   border-color: var(--blau-s);
-  box-shadow: 0 0 0 3px rgba(127, 185, 198, 0.1);
+  background-color: var(--blanc);
+  box-shadow: 0 0 0 4px rgba(127, 185, 198, 0.1);
 }
 
 .adds-landing .form-control::placeholder {
@@ -368,44 +1173,54 @@
 
 .adds-landing textarea.form-control {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
+.adds-landing .form-checkbox {
+  display: flex;
+  align-items: start;
+  gap: 1.2rem;
+}
+
+.adds-landing .form-checkbox input[type="checkbox"],
 .adds-landing .form-group input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
   cursor: pointer;
   accent-color: var(--blau-s);
 }
 
+.adds-landing .form-checkbox label,
 .adds-landing .form-group label[for="fmr_acceptinfo"] {
-  display: inline;
-  font-size: 1.6rem;
+  margin: 0;
+  font-size: 1.5rem;
   font-weight: 400;
-  margin-bottom: 0;
-}
-
-.adds-landing .btn-enviar {
-  width: 100%;
-  padding: 1.5rem 2rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: var(--blau-s);
-  border: none;
-  border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s;
 }
 
-.adds-landing .btn-enviar:hover {
-  background-color: var(--blau-p);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(43, 66, 70, 0.3);
+.adds-landing .btn-enviar,
+.adds-landing .btn-submit {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--blanc);
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.adds-landing .btn-enviar:active {
+.adds-landing .btn-enviar:hover,
+.adds-landing .btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(43, 66, 70, 0.3);
+}
+
+.adds-landing .btn-enviar:active,
+.adds-landing .btn-submit:active {
   transform: translateY(0);
 }
 
@@ -415,8 +1230,8 @@
 }
 
 .adds-landing .loader img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   animation: spin 1s linear infinite;
 }
 
@@ -435,15 +1250,20 @@
 }
 
 .adds-landing .alert {
-  padding: 2rem;
+  padding: 2.5rem;
   margin: 2rem 0;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   text-align: center;
 }
 
 .adds-landing .alert h2 {
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: clamp(2rem, 3vi, 2.4rem);
+}
+
+.adds-landing .alert p {
+  margin: 0;
+  font-size: 1.7rem;
 }
 
 .adds-landing .alert-success {
@@ -452,7 +1272,8 @@
   color: #155724;
 }
 
-.adds-landing .alert-success h2 {
+.adds-landing .alert-success h2,
+.adds-landing .alert-success p {
   color: #155724;
 }
 
@@ -462,47 +1283,14 @@
   color: #721c24;
 }
 
-.adds-landing .alert-danger h2 {
+.adds-landing .alert-danger h2,
+.adds-landing .alert-danger p {
   color: #721c24;
 }
 
-@media (max-width: 768px) {
-
-  .adds-landing .grid-4 .grid,
-  .adds-landing .grid-3 .grid,
-  .adds-landing .text-img .grid {
-    grid-template-columns: 100%;
-  }
-
-  .adds-landing section {
-    padding: 4rem 0;
-  }
-
-  .adds-landing .numbered-list ol li {
-    padding: 1.5rem 0 1.5rem 5rem;
-  }
-
-  .adds-landing .styled-list ul li {
-    padding: 1rem 0 1rem 3rem;
-  }
-
-  .adds-landing .custom-adds-box {
-    padding: 2rem 1.5rem;
-  }
-
-  .adds-landing .form-control {
-    padding: 1rem 1.2rem;
-    font-size: 1.4rem;
-  }
-
-  .adds-landing .contact-btn {
-    padding: 1.2rem 3rem;
-    font-size: 1.6rem;
-    width: 100%;
-    margin: 2rem 0;
-  }
-}
-
+/* ==========================================================================
+   UTILITATS
+   ========================================================================== */
 
 .adds-landing .text-left {
   text-align: left;
@@ -562,4 +1350,124 @@
 
 .adds-landing .mb-5 {
   margin-bottom: 5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .adds-landing .servei-block {
+    grid-template-columns: 1fr;
+  }
+
+  .adds-landing .servei-left .servei-content,
+  .adds-landing .servei-right .servei-content {
+    padding: 4rem 3rem;
+  }
+
+  .adds-landing .servei-image {
+    order: -1;
+  }
+
+  .adds-landing .potenciem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adds-landing .form-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .adds-landing .plataformes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .adds-landing section {
+    padding: 4rem 0;
+  }
+
+  .adds-landing .hero-immobiliari,
+  .adds-landing .hero-gradient {
+    padding: 8rem 0 6rem;
+    min-height: auto;
+  }
+
+  .adds-landing .hero-features {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .adds-landing .resultats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adds-landing .grid-4 .grid,
+  .adds-landing .grid-3 .grid,
+  .adds-landing .text-img .grid {
+    grid-template-columns: 100%;
+  }
+
+  .adds-landing .numbered-list ol li {
+    padding: 1.5rem 0 1.5rem 5rem;
+  }
+
+  .adds-landing .styled-list ul li {
+    padding: 1rem 0 1rem 3rem;
+  }
+
+  .adds-landing .timeline {
+    padding-left: 3.5rem;
+  }
+
+  .adds-landing .timeline-marker {
+    left: -3.5rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+  }
+
+  .adds-landing .timeline::before {
+    left: 1.3rem;
+  }
+
+  .adds-landing .cta-buttons {
+    flex-direction: column;
+  }
+
+  .adds-landing .cta-primary,
+  .adds-landing .cta-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .adds-landing .custom-adds-box,
+  .adds-landing .form-box {
+    padding: 3rem 2rem;
+  }
+
+  .adds-landing .form-control {
+    padding: 1.2rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .adds-landing .contact-btn {
+    padding: 1.2rem 3rem;
+    font-size: 1.6rem;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .adds-landing .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .adds-landing .segmentacio-tags {
+    flex-direction: column;
+  }
+
+  .adds-landing .segmentacio-tags .tag {
+    text-align: center;
+  }
 }

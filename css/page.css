@@ -5,19 +5,5 @@ article>.container {
 }
 
 .article-header {
-    margin-top: 7.4rem;
-    background: linear-gradient(45deg, var(--blau-s), var(--blau-p), #36a1ba, #e83842, #fabf2e);
-    background-size: 400% 400% !important;
-    animation: gradient 15s ease infinite;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.article-title {
-    margin: 0;
-    color: #fff;
+    display: none;
 }
