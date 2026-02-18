@@ -846,6 +846,11 @@
   direction: ltr;
 }
 
+.adds-landing .text-img .grid>div>img {
+  width: 100%;
+  height: auto;
+}
+
 /* ==========================================================================
    COMPONENT: GRID 3/4 (mantingut per compatibilitat)
    ========================================================================== */
